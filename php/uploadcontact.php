@@ -9,7 +9,7 @@ if (!empty($_POST['mail']) && !empty($_POST['place']) && !empty($_POST['phone'])
 	$sql="UPDATE editcontact SET mail='$mail',place='$place',phone='$phone'";
 
 	$query=mysqli_query($db_con,$sql);
-	header("Location:index.php");
+	header("Location:adminpage.php");
 
 }
 else{	

@@ -6,8 +6,8 @@ if($_SESSION["login"]){
 <html>
 	<head>
 		<title>Are you sure to delete?</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.css">
-		<link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+		<link rel="stylesheet" href="../assets/css/bootstrap.css">
+		<link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
    </head>
 	<body>
 	<h2>Are you sure?</h2>

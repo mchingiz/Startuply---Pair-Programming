@@ -4,7 +4,8 @@ if($_SESSION["login"]){ ?>
 <!DOCTYPE html>
 <html>
     <head></head>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
     
     <style>
         body{width:900px; margin:0 auto;}
@@ -18,6 +19,9 @@ if($_SESSION["login"]){ ?>
         <a class="btn btn-default" href="menu.php">Edit Menu</a>
         <a class="btn btn-default" href="subsList.php">View Subscription List</a>
         <a class="btn btn-default" href="editcontact.php">Change Contact Details</a>
+        <a class="btn btn-default" href="header.php">Edit Header Section</a>
+        <a class="btn btn-default" href="editteam.php">Edit Team</a>
+        <a class="btn btn-default" href="editpackages.php">Edit Packages</a>
         
         <form action="logout.php" method="post">
             <input type="submit" value="Logout" class="btn btn-danger" name="logout">

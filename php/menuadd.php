@@ -6,8 +6,8 @@ if($_SESSION["login"]){
 <html>
 	<head>
 	<title>Add item to menu</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-   <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+   <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 	</head>
 	<body>
 		<form action="" method="post">

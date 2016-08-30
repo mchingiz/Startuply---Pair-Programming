@@ -48,7 +48,7 @@ else{
     </style>
     <body>
         <h1 class="text-center">Admin panel</h1>
-            <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form class="form-horizontal" action="" method="post">
                 <div class="form-group">
                     <label for="inputEmail" class="col-sm-3 control-label">E-poçtunuzu daxil edin</label>
                     <div class="col-sm-6">

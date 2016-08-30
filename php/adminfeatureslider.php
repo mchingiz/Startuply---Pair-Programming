@@ -8,7 +8,8 @@ if($_SESSION["login"]){
 <html>
 	<head>
 		<title>All users</title>
-		<link rel="stylesheet" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" href="../assets/css/bootstrap.css">
+		<link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 		<style>
 			body{
 				width:1000px;margin:0 auto;
@@ -20,21 +21,18 @@ if($_SESSION["login"]){
 		</style>
 	</head>
 	<body>
-        <h1>Features </h1>
-        <a class='col-md-2 btn btn-success' href='featureadd.php'>Add</a>
+        <h1>Features Slider</h1>
 		<table class="col-md-12" >
 			<tr>
                 <th>Id</th>
-				<th>Icon</th>
 				<th>Heading</th>
 				<th>Text</th>
-				<th>Operations</th>
 			</tr>
 			<?php
 				include "db.php";
 				
 				if($db_con){
-					$query="SELECT * FROM features";
+					$query="SELECT * FROM featureslider";
 					$sendQuery=mysqli_query($db_con,$query);
 					while($row=mysqli_fetch_assoc($sendQuery)){?>
 						<tr>
@@ -44,8 +42,7 @@ if($_SESSION["login"]){
 						}
 						$id=$row['id']; ?>
                         <td>
-							<a class='btn btn-success' href='featureupdate.php?id=<?= $id ?>'>Update</a>
-							<a class='btn btn-danger' href='featuredelete.php?id=<?= $id ?>'>Delete</a>
+							<a class='btn btn-success' href='featureslider.php?id=<?= $id ?>'>Update</a>
 						</td>
                         </tr>
 					<?php }

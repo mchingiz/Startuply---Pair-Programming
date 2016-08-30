@@ -50,7 +50,7 @@
 		<div class="navbar-menu-left">
 			<ul class="list-inline list-unstyled">
 				<?php
-					include "db.php";
+					include "php/db.php";
 				
 					$query="SELECT * FROM menu";
 					$sendQuery=mysqli_query($db_con,$query);
@@ -77,11 +77,27 @@
 	</div>
 	</div>
 	</nav>
+	
+	<?php
+		include "php/db.php";
+		$query=("SELECT * FROM header");
+		$sendQuery=mysqli_query($db_con,$query);
 
+		$row=mysqli_fetch_assoc($sendQuery);
+		$h1text=$row['text'];
+
+		$row=mysqli_fetch_assoc($sendQuery);
+		$h3text=$row['text'];
+	?>
+	
 	<section id="header">
 		<div class="container fadeIn">
-			<h1>Do not wait — <span>launch</span> your startup now!</h1>
-			<h3>this tempate is flexible enough to suit any kind of startup or new business</h3>
+			
+			
+			<!--<h1>Do not wait — <span>launch</span> your startup now!</h1>
+			<h3>this tempate is flexible enough to suit any kind of startup or new business</h3>-->
+			<h1><?= $h1text ?></h1>
+			<h3><?= $h3text ?></h3>
 			<ul class="list-inline list-unstyled">
 				<li>
 				<button class="btn">
@@ -117,9 +133,16 @@
 			<div class="item row" id="item11">
 				<div class="itemImg col-md-6 col-sm-6 col-xs-12 animateRight"><img src="img/people.jpg" class="img-responsive"></div>
 				<div class="itemContent col-md-6 col-sm-6 col-xs-12 animateLeft" style="text-align:center">
-					<h3>For every <span>startup</span></h3>
-					<p style="padding-left:95px;padding-right:95px">Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
-					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+					<?php
+						include "php/db.php";
+						$query="SELECT * FROM feature WHERE name='sec1tab1'";
+						$sendQuery=mysqli_query($db_con,$query);
+
+						$row=mysqli_fetch_assoc($sendQuery);
+					?>
+					<h3><?= $row['h3'] ?></span></h3>
+					<p style="padding-left:95px;padding-right:95px"><?= $row['p1'] ?></p>
+					<p><?= $row['p2'] ?>.</p>
 					<ul class="list-inline list-unstyled">
 					<li><button class="btn">Get Template</a></button></li>
 					<li><button class="btn">See Elements</button></li>
@@ -129,9 +152,16 @@
 				<!-- TAB 2 -->
 			<div class="item row" id="item12">
 				<div class="itemContent col-md-6 col-sm-6 col-xs-12 animateRight" style="text-align:center">
-					<h3>New Age <span>Technology</span></h3>
-					<p style="padding-left:95px;padding-right:95px">Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
-					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+					<?php
+						include "php/db.php";
+						$query="SELECT * FROM feature WHERE name='sec1tab2'";
+						$sendQuery=mysqli_query($db_con,$query);
+
+						$row=mysqli_fetch_assoc($sendQuery);
+					?>
+					<h3><?= $row['h3'] ?></span></h3>
+					<p style="padding-left:95px;padding-right:95px"><?= $row['p1'] ?></p>
+					<p><?= $row['p2'] ?></p>
 					<ul class="list-inline list-unstyled">
 					<li><button class="btn">Get Template</a></button></li>
 					<li><button class="btn">See Elements</button></li>
@@ -163,10 +193,17 @@
 			</div>
 			<!-- Item 2 -->
 			<div class="item row" id="item2">
+				<?php
+					include "php/db.php";
+					$query="SELECT * FROM feature WHERE name='sec2'";
+					$sendQuery=mysqli_query($db_con,$query);
+
+					$row=mysqli_fetch_assoc($sendQuery);
+				?>
 				<div class="itemContent col-md-6 col-sm-6 col-xs-12 animateRight" style="text-align:left">
-					<h3>New age <span>technology</span></h3>
-					<p style="padding-right:190px">Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
-					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+					<h3><?= $row['h3'] ?></span></h3>
+					<p style="padding-right:190px"><?= $row['p1'] ?></p>
+					<p><?= $row['p2'] ?></p>
 				</div>
 				<div class="itemImg col-md-6 col-sm-6 col-xs-12 animateLeft"><img src="img/mac.png" class="img-responsive"></div>
 			</div>
@@ -174,9 +211,16 @@
 			<div class="item row" id="item3">
 				<div class="itemImg col-md-6 col-sm-6 col-xs-12 animateRight"><img src="img/helmet.jpg" class="img-responsive"></div>
 				<div class="itemContent col-md-6 col-sm-6 col-xs-12 animateLeft" style="text-align:right">
-					<h3>Hang <span>on to</span> your helmet</h3>
-					<p style="padding-left:130px">Lorem ipsum dolor sit atmet sit dolor greand fdanrh sdfs sit atmet sit dolor greand fdanrh sdfs</p>
-					<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
+					<?php
+						include "php/db.php";
+						$query="SELECT * FROM feature WHERE name='sec3'";
+						$sendQuery=mysqli_query($db_con,$query);
+
+						$row=mysqli_fetch_assoc($sendQuery);
+					?>
+					<h3><?= $row['h3'] ?></h3>
+					<p style="padding-left:130px"><?= $row['p1'] ?></p>
+					<p><?= $row['p2'] ?></p>
 				</div>
 			</div>
 		</div>
@@ -210,7 +254,7 @@
 		<div class="container">
             <div class="row">
         <?php 
-        include "db.php";
+        include "php/db.php";
         $query="SELECT * FROM features";
         $sendQuery=mysqli_query($db_con,$query);
             $i=0;
@@ -237,7 +281,7 @@
 			<p>No spam promise - only latest news and prices!</p>
 			</div>
 		<div class="animateLeft col-lg-7 col-md-12">
-			<form action="subscription.php" method="POST">
+			<form action="php/subscription.php" method="POST">
 				<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-1 col-lg-4 col-lg-offset-0">
 					<input type="text" name="name" placeholder="Your name">
 				</div>
@@ -260,10 +304,18 @@
 			</div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<div class="package disabled">
-				<h1>Individual</h1>
+			<?php
+				$query="SELECT * FROM packages";
+				$sendQuery=mysqli_query($db_con,$query);
+				
+				$row1=mysqli_fetch_assoc($sendQuery);
+				$row2=mysqli_fetch_assoc($sendQuery);
+				$row3=mysqli_fetch_assoc($sendQuery);
+			?>
+				<h1><?= $row1['name'] ?></h1>
 				<div class="price">
-					<h2><span>$</span>19</h2>
-					<p>Per Month</p>
+					<h2><span>$</span><?= $row1['price'] ?></h2>
+					<p><?= $row1['period'] ?></p>
 				</div>
 				<div class="description">
 					<ul class="list-unstyled">
@@ -278,10 +330,10 @@
 		</div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<div class="package">
-				<h1>Studio</h1>
+				<h1><?= $row2['name'] ?></h1>
 				<div class="price">
-					<h2><span>$</span>29</h2>
-					<p>Subscription</p>
+					<h2><span>$</span><?= $row2['price'] ?></h2>
+					<p><?= $row2['period'] ?></p>
 				</div>
 				<div class="description">
 					<ul class="list-unstyled">
@@ -296,10 +348,10 @@
 		</div>
 		<div class="col-md-4 col-sm-4 col-xs-12">
 			<div class="package">
-				<h1>Enterprise</h1>
+				<h1><?= $row3['name'] ?></h1>
 				<div class="price">
-					<h2><span>$</span>49</h2>
-					<p>Per Month</p>
+					<h2><span>$</span><?= $row3['price'] ?></h2>
+					<p><?= $row3['period'] ?></p>
 				</div>
 				<div class="description">
 					<ul class="list-unstyled">
@@ -334,7 +386,7 @@
 
 	<section id="clientQuote">
 	<?php 
-		include "db.php";
+		include "php/db.php";
 		
 		$query="SELECT * FROM quote";
 		$sendQuery=mysqli_query($db_con,$query);
@@ -426,13 +478,21 @@
 				<p>In his igitur partibus duabus nihil erat, quod Zeno commuta rest gestiret. Sed virtutem ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione. In his rest gestiret. Sed ipsam inchoavit, nihil ampliusuma. Scien tiam pollicentur, quam non erat mirum sapientiae lorem cupido patria esse cariorem. Quae qui non vident, nihilamane umquam magnum ac cognitione.</p>
 			</div>
 			<div id="teamMember1" class="col-md-3  col-sm-3 col-xs-6">
+			<?php
+				include "php/db.php";
+				
+				$query="SELECT * FROM team WHERE id=1";
+				$sendQuery=mysqli_query($db_con,$query);
+					
+				$row=mysqli_fetch_assoc($sendQuery);
+			?>
 				<div class="animateDown teamMember">
 					<div class="overlap">
 					<div class="memberImg">
-						<img src="img/team1.jpg">
+						<img src="<?= $row['image'] ?>">
 					</div>
 					<div class="memberAbout">
-						<p class="hidden-md hidden-sm hidden-xs">Mike has worked with CARE USA, for 12 years holding positions such as Deputy Country Director to Director of Programs and Information Systems.</p>
+						<p class="hidden-md hidden-sm hidden-xs"><?= $row['description'] ?></p>
 						<ul class="list-inline list-usntyled">
 							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -442,35 +502,47 @@
 						</ul>
 					</div>
 				</div>
-				<h1>Mike Bolder</h1>
-				<h2>Developer</h2>
+				<h1><?= $row['name'] ?></h1>
+				<h2><?= $row['job'] ?></h2>
 				</div>
 			</div>
 			<div id="teamMember2" class="col-md-3  col-sm-3 col-xs-6">
+				<?php
+					$query="SELECT * FROM team WHERE id=2";
+					$sendQuery=mysqli_query($db_con,$query);
+
+					$row=mysqli_fetch_assoc($sendQuery);
+				?>
 				<div class="animateUp teamMember">
 					<div class="overlap">
 					<div class="memberImg">
-						<img src="img/team2.jpg">
+						<img src="<?= $row['image'] ?>">
 					</div>
 					<div class="memberAbout">
-						<p class="hidden-md hidden-sm">Mike has worked with CARE USA, for 12 years holding positions such as Deputy Country Director to Director of Programs and Information Systems.</p>
+						<p class="hidden-md hidden-sm"><?= $row['description'] ?></p>
 						<ul class="list-inline list-usntyled">
 							<li><a href="#"><i class="fa fa-skype"></i></a></li>
 						</ul>
 					</div>
 				</div>
-				<h1>Mike Bolder</h1>
-				<h2>Developer</h2>
+				<h1><?= $row['name'] ?></h1>
+				<h2><?= $row['job'] ?></h2>
 				</div>
 			</div>
 			<div id="teamMember3" class="col-md-3  col-sm-3 col-xs-6">
+				<?php
+					$query="SELECT * FROM team WHERE id=3";
+					$sendQuery=mysqli_query($db_con,$query);
+
+					$row=mysqli_fetch_assoc($sendQuery);
+				?>
 				<div class="animateDown teamMember">
 					<div class="overlap">
 					<div class="memberImg">
-						<img src="img/team3.jpg">
+						<img src="<?= $row['image'] ?>">
 					</div>
 					<div class="memberAbout">
-						<p class="hidden-md hidden-sm">Ellen has over 13 years of experience in development projects as a senior consultant and project manager in the areas of project management.</p>
+						<p class="hidden-md hidden-sm"><?= $row['description'] ?></p>
 						<ul class="list-inline list-usntyled">
 							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -480,18 +552,24 @@
 						</ul>
 					</div>
 				</div>
-				<h1>Mike Bolder</h1>
-				<h2>Developer</h2>
+				<h1><?= $row['name'] ?></h1>
+				<h2><?= $row['job'] ?></h2>
 				</div>
 			</div>
 			<div id="teamMember4" class="col-md-3  col-sm-3 col-xs-6">
+				<?php
+					$query="SELECT * FROM team WHERE id=4";
+					$sendQuery=mysqli_query($db_con,$query);
+
+					$row=mysqli_fetch_assoc($sendQuery);
+				?>
 				<div class="animateUp teamMember">
 					<div class="overlap">
 					<div class="memberImg">
-						<img src="img/team4.jpg">
+						<img src="<?= $row['image'] ?>">
 					</div>
 					<div class="memberAbout">
-						<p class="hidden-md hidden-sm">Mike has worked with CARE USA, for 12 years holding positions such as Deputy Country Director to Director of Programs and Information Systems.</p>
+						<p class="hidden-md hidden-sm"><?= $row['description'] ?></p>
 						<ul class="list-inline list-usntyled">
 							<li><a href="#"><i class="fa fa-envelope"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -501,8 +579,8 @@
 						</ul>
 					</div>
 				</div>
-				<h1>Mike Bolder</h1>
-				<h2>Developer</h2>
+				<h1><?= $row['name'] ?></h1>
+				<h2><?= $row['job'] ?></h2>
 				</div>
 			</div>
 
@@ -566,7 +644,7 @@
 			<h2>Our Contacts</h2>
 			<ul class="list-unstyled">
 				<?php
-				include "db.php";
+				include "php/db.php";
 				
 				if($db_con){
 					$query="SELECT * FROM editcontact";

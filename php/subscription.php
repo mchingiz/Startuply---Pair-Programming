@@ -9,7 +9,7 @@ if (!empty($name) && !empty($mail)) {
 	$sql="INSERT INTO row (`name`,`mail`) VALUES ('$name','$mail')";
 
 	$query=mysqli_query($db_con,$sql);
-	header("Location:index.php");
+	header("Location:../index.php");
 
 }
 else{	

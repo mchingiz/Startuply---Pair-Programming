@@ -6,8 +6,8 @@ if($_SESSION["login"]){
 <!DOCTYPE html>
 <html>
 	<head>
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-   <link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+   <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 	<title>Delete</title>
         <style>
             body{ width:900px; margin:60px auto;}
